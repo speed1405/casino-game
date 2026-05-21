@@ -4,12 +4,12 @@
 The Casino Web Application is a full-stack project featuring a web-based user interface and a robust backend to handle game logic and virtual economy. The application will feature a lobby and four distinct casino games: a modern 5-reel Slot Machine, Blackjack, Baccarat, and Texas Hold'em Poker played against 5 AI opponents.
 
 ## 2. Technology Stack
-*   **Frontend:** HTML5, CSS3, Vanilla JavaScript. Simple visual elements will be built using CSS and Unicode characters (e.g., card suits ♠️♥️♦️♣️, slot symbols 🍒🔔💎) instead of heavy image assets.
+*   **Frontend:** HTML5, CSS3, Vanilla JavaScript. The UI will feature an **image-heavy design**, utilizing high-quality, open-source/royalty-free image assets for backgrounds, custom slot machine symbols (tailored to each theme), and detailed playing cards.
 *   **Backend:** Python with Flask (or FastAPI).
 *   **Database:** SQLite to store user profiles, balances, and timestamp of daily coin claims.
 
 ## 3. Core Features & Economy
-*   **User System:** A simple login system (username-based) allowing multiple users to have independent tracked balances.
+*   **User System:** A simple login system (username based) allowing multiple users to have independent tracked balances.
 *   **Virtual Economy:**
     *   Players wager using an in-game currency.
     *   **Daily Bonus:** Players can claim a daily coin reward.
