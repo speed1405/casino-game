@@ -70,9 +70,112 @@
         <div id="game-area" class="main-content">
             <button id="back-to-lobby-btn" class="btn primary-btn">⬅ Back to Lobby</button>
             <div id="game-container">
-                <!-- Game specific UI will be injected here in later phases -->
                 <h2 id="current-game-title">Game Loading...</h2>
-                <p>Game mechanics will be implemented in the next phases.</p>
+
+                <!-- Slots UI -->
+                <div id="slots-ui" class="game-ui" style="display: none;">
+                    <div class="theme-selector">
+                        <label>Theme: </label>
+                        <select id="slots-theme">
+                            <option value="scifi">Sci-Fi</option>
+                            <option value="egypt">Ancient Egypt</option>
+                            <option value="cyberpunk">Cyberpunk</option>
+                        </select>
+                        <span id="slots-free-spins-badge" class="badge warning-btn" style="display:none;">Free Spins: 0</span>
+                    </div>
+
+                    <div id="slots-grid" class="slots-grid">
+                        <!-- 5x3 grid injected here -->
+                    </div>
+
+                    <div class="controls-area">
+                        <input type="number" id="slots-bet-input" placeholder="Bet Amount" min="10" value="10">
+                        <button id="slots-spin-btn" class="btn primary-btn">SPIN!</button>
+                        <div id="slots-message" class="game-message"></div>
+                    </div>
+                </div>
+
+                <!-- Blackjack UI -->
+                <div id="blackjack-ui" class="game-ui" style="display: none;">
+                    <div class="table-area">
+                        <div class="dealer-area">
+                            <h3>Dealer's Hand <span id="bj-dealer-val" class="badge"></span></h3>
+                            <div id="bj-dealer-cards" class="card-container"></div>
+                        </div>
+                        <div class="player-area">
+                            <h3>Your Hand <span id="bj-player-val" class="badge"></span></h3>
+                            <div id="bj-player-cards" class="card-container"></div>
+                        </div>
+                    </div>
+                    <div class="controls-area">
+                        <div id="bj-bet-controls">
+                            <input type="number" id="bj-bet-input" placeholder="Bet Amount" min="10">
+                            <button id="bj-deal-btn" class="btn primary-btn">Deal</button>
+                        </div>
+                        <div id="bj-play-controls" style="display: none;">
+                            <button id="bj-hit-btn" class="btn secondary-btn">Hit</button>
+                            <button id="bj-stand-btn" class="btn warning-btn">Stand</button>
+                        </div>
+                        <div id="bj-message" class="game-message"></div>
+                    </div>
+                </div>
+
+                <!-- Poker UI -->
+                <div id="poker-ui" class="game-ui" style="display: none;">
+                    <div class="poker-table">
+                        <div id="poker-community-cards" class="card-container community-cards">
+                            <!-- Community cards injected here -->
+                        </div>
+                        <div class="pot-display">Pot: <span id="poker-pot">0</span></div>
+
+                        <div class="ai-players-container" id="poker-ai-players">
+                            <!-- AI players injected here -->
+                        </div>
+
+                        <div class="player-area poker-player">
+                            <h3>You (Chips: <span id="poker-player-chips">0</span>)</h3>
+                            <div id="poker-player-cards" class="card-container"></div>
+                        </div>
+                    </div>
+
+                    <div class="controls-area">
+                        <div id="poker-start-controls">
+                            <input type="number" id="poker-buyin-input" placeholder="Buy-in Amount" min="10" value="100">
+                            <button id="poker-start-btn" class="btn primary-btn">Join Table</button>
+                        </div>
+                        <div id="poker-play-controls" style="display: none;">
+                            <button id="poker-fold-btn" class="btn warning-btn">Fold</button>
+                            <button id="poker-call-btn" class="btn secondary-btn">Call / Check</button>
+                            <input type="number" id="poker-raise-input" placeholder="Raise Amount" min="10" style="width: 120px; display:inline-block;">
+                            <button id="poker-raise-btn" class="btn primary-btn">Raise</button>
+                        </div>
+                        <div id="poker-message" class="game-message"></div>
+                    </div>
+                </div>
+
+                <!-- Baccarat UI -->
+                <div id="baccarat-ui" class="game-ui" style="display: none;">
+                    <div class="table-area baccarat-table">
+                        <div class="player-area">
+                            <h3>Player <span id="bac-player-val" class="badge"></span></h3>
+                            <div id="bac-player-cards" class="card-container"></div>
+                        </div>
+                        <div class="banker-area">
+                            <h3>Banker <span id="bac-banker-val" class="badge"></span></h3>
+                            <div id="bac-banker-cards" class="card-container"></div>
+                        </div>
+                    </div>
+                    <div class="controls-area">
+                        <input type="number" id="bac-bet-input" placeholder="Bet Amount" min="10">
+                        <div class="bet-buttons">
+                            <button class="btn secondary-btn" onclick="playBaccarat('player')">Bet Player (1:1)</button>
+                            <button class="btn warning-btn" onclick="playBaccarat('tie')">Bet Tie (8:1)</button>
+                            <button class="btn primary-btn" onclick="playBaccarat('banker')">Bet Banker (0.95:1)</button>
+                        </div>
+                        <div id="bac-message" class="game-message"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
