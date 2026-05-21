@@ -9,7 +9,7 @@ The Casino Web Application is a full-stack project featuring a web-based user in
 *   **Database:** SQLite to store user profiles, balances, and timestamp of daily coin claims.
 
 ## 3. Core Features & Economy
-*   **User System:** A simple login system (username based) allowing multiple users to have independent tracked balances.
+*   **User System:** A simple login system (username-based) allowing multiple users to have independent tracked balances.
 *   **Virtual Economy:**
     *   Players wager using an in-game currency.
     *   **Daily Bonus:** Players can claim a daily coin reward.
