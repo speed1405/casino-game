@@ -49,7 +49,18 @@ The Casino Web Application is a full-stack project featuring a web-based user in
     *   **AI:** The 5 AI opponents will have rudimentary logic to evaluate their hand strength and pot odds to make decisions.
 *   **UI:** A turn-based interface that halts and waits for the human player's input when it is their turn, while automatically processing AI turns with a slight delay for visual pacing.
 
-## 5. Architecture & Data Flow
+## 5. UI/UX Plan & Navigation
+The application will prioritize an intuitive, visually striking interface utilizing the high-quality open-source image assets.
+
+*   **The Lobby (Main Hub):**
+    *   **Layout:** Features a traditional top navigation bar displaying the player's username, current in-game currency balance, the "Claim Daily Coins" button, and the "Withdraw BTC" button.
+    *   **Content Area:** Below the nav bar, a grid or carousel prominently displaying large, thematic image banners acting as launch buttons for the four distinct games (Slots, Blackjack, Baccarat, Poker).
+*   **Game Interfaces (Immersive Mode):**
+    *   When a user clicks on a game from the lobby, the game will **take over the entire screen** to provide an immersive experience, temporarily hiding the traditional top navigation bar.
+    *   The in-game UI will focus entirely on the game mat/reels, betting controls, and thematic background.
+    *   A prominent, standardized **"Back to Lobby"** button will be positioned in a corner (e.g., top-left) allowing users to exit the game, save their state, and return to the main hub.
+
+## 6. Architecture & Data Flow
 1.  **Client-Side (Browser):** Renders the UI and handles user inputs. Sends asynchronous HTTP requests (AJAX/Fetch) or uses WebSockets (for poker pacing if necessary) to communicate with the backend.
 2.  **Server-Side (Python Backend):**
     *   Receives actions from the client.
@@ -58,7 +69,7 @@ The Casino Web Application is a full-stack project featuring a web-based user in
     *   Updates the SQLite database with the new balance.
     *   Returns the updated game state to the client.
 
-## 6. Implementation Phases
+## 7. Implementation Phases
 *   **Phase 1: Setup & Economy.** Initialize backend, database, and simple login. Create the lobby and the daily coin collection system.
 *   **Phase 2: Single Player Games.** Implement Blackjack and Baccarat (Frontend UI and Backend logic).
 *   **Phase 3: Slot Machine.** Develop the 5-reel generation logic and payline calculation.
