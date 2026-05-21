@@ -19,9 +19,14 @@ The Casino Web Application is a full-stack project featuring a web-based user in
 ## 4. Games Specification
 
 ### 4.1. Slot Machine
-*   **Style:** Modern 5-reel video slot.
-*   **Mechanics:** Players select their bet amount and spin. The backend will randomly generate a 5x3 grid of symbols.
-*   **Payouts:** Specific paylines will be checked (e.g., horizontal lines, V-shapes). Payouts are based on the rarity and sequence of the matching symbols.
+*   **Style:** Modern 5-reel video slot featuring multiple selectable themes.
+*   **Themes:**
+    *   **Sci-Fi:** Futuristic symbols. *Mechanic Idea:* Cascading symbols (winning symbols disappear and new ones fall in).
+    *   **Ancient Egypt:** Pharaohs, scarabs, and pyramids. *Mechanic Idea:* Expanding Wilds (a wild symbol on a reel expands to cover the entire reel).
+    *   **Cyberpunk:** Neon cityscapes and hackers. *Mechanic Idea:* Win multipliers that increase with consecutive wins or specific scatter symbols.
+*   **Core Mechanics:** Players select their theme, set their bet amount, and spin. The backend generates a 5x3 grid of symbols based on the chosen theme's specific rules and probabilities. Features include wild symbols, scatter symbols, and multiplier tracking.
+*   **Free Spins & Bonuses:** Getting three or more designated Scatter symbols anywhere on the reels will trigger a Free Spins bonus round, where players receive a set number of spins without deducting from their balance. Some themes may feature enhanced multipliers during these free spins.
+*   **Payouts:** Specific paylines will be checked. Payouts and bonus calculations will vary based on the active theme's unique mechanics.
 
 ### 4.2. Blackjack
 *   **Rules:** Standard rules. Blackjack pays 3:2. The dealer must hit on soft 17 (or stand on all 17s, depending on configuration).
