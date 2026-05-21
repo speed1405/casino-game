@@ -139,31 +139,66 @@ input[type="text"], input[type="number"] {
 
 .game-card {
     background-color: var(--bg-card);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
     text-align: center;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
+    border: 1px solid #333;
 }
 
 .game-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(187, 134, 252, 0.2);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(187, 134, 252, 0.4);
+    border-color: var(--primary);
 }
 
 .game-banner {
-    height: 150px;
-    background-color: #333; /* Placeholder for future open-source images */
+    height: 180px;
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
+    font-size: 5rem;
     margin-bottom: 1rem;
+    position: relative;
+    border-bottom: 3px solid var(--primary);
 }
 
-.game-card h3 { margin: 0; }
-.game-card p { color: var(--text-muted); font-size: 0.9rem; }
+.slots-banner {
+    background: linear-gradient(135deg, rgba(255,0,204,0.8), rgba(51,51,153,0.8)), url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60');
+    background-size: cover;
+    background-position: center;
+}
+.blackjack-banner {
+    background: linear-gradient(135deg, rgba(13,74,34,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1606167668584-78701c57f13d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60');
+    background-size: cover;
+    background-position: center;
+}
+.baccarat-banner {
+    background: linear-gradient(135deg, rgba(128,0,0,0.8), rgba(77,0,0,0.8)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60');
+    background-size: cover;
+    background-position: center;
+}
+.poker-banner {
+    background: linear-gradient(135deg, rgba(139,69,19,0.8), rgba(46,23,6,0.8)), url('https://images.unsplash.com/photo-1541278107931-e006523892df?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-card h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.game-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
 
 /* Immersive Game Area */
 #game-area {
@@ -246,6 +281,11 @@ input[type="text"], input[type="number"] {
     background-position: 0 0, 10px 10px;
     background-size: 20px 20px;
     color: transparent;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 .controls-area {

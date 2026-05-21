@@ -7,11 +7,11 @@ Database initialized.
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 123-396-847
-127.0.0.1 - - [21/May/2026 10:20:45] "GET / HTTP/1.1" 200 -
-127.0.0.1 - - [21/May/2026 10:20:45] "GET /static/style.css HTTP/1.1" 200 -
-127.0.0.1 - - [21/May/2026 10:20:45] "GET /static/app.js HTTP/1.1" 200 -
-127.0.0.1 - - [21/May/2026 10:20:45] "POST /api/login HTTP/1.1" 200 -
-127.0.0.1 - - [21/May/2026 10:20:45] "GET /api/balance HTTP/1.1" 200 -
-127.0.0.1 - - [21/May/2026 10:20:46] "GET /api/balance HTTP/1.1" 200 -
-127.0.0.1 - - [21/May/2026 10:20:46] "GET /api/balance HTTP/1.1" 200 -
-127.0.0.1 - - [21/May/2026 10:20:47] "GET /api/balance HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2026 23:23:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2026 23:23:15] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2026 23:23:15] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2026 23:23:15] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2026 23:23:15] "GET /api/balance HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2026 23:23:16] "GET /api/balance HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2026 23:23:16] "GET /api/balance HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2026 23:23:17] "GET /api/balance HTTP/1.1" 200 -

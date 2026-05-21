@@ -4,7 +4,7 @@ import datetime
 import requests
 import random
 import os
-from deck import create_deck, calculate_hand_blackjack, calculate_hand_baccarat
+from deck import create_deck, calculate_hand_blackjack, calculate_hand_baccarat, card_value_blackjack, card_value_baccarat
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('FLASK_SECRET_KEY', os.urandom(24))

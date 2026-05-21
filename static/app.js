@@ -428,9 +428,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderCard(cardData, hidden=false) {
         if (hidden) return `<div class="playing-card hidden"></div>`;
         const color = (cardData.suit === '♥' || cardData.suit === '♦') ? 'red' : 'black';
-        return `<div class="playing-card ${color}">
-            <div class="val">${cardData.rank}</div>
-            <div class="suit">${cardData.suit}</div>
+        // Add subtle animation for drawing a card
+        return `<div class="playing-card ${color}" style="animation: popIn 0.3s ease-out forwards;">
+            <div class="val" style="align-self: flex-start; margin-left: 5px;">${cardData.rank}</div>
+            <div class="suit" style="font-size: 3rem;">${cardData.suit}</div>
+            <div class="val" style="align-self: flex-end; margin-right: 5px; transform: rotate(180deg);">${cardData.rank}</div>
         </div>`;
     }
 
