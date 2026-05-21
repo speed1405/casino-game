@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino Web Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="screen active">
+        <div class="login-box">
+            <h1>Welcome to the Casino</h1>
+            <p>Enter a username to start playing</p>
+            <input type="text" id="username-input" placeholder="Username">
+            <button id="login-btn" class="btn primary-btn">Login</button>
+            <div id="login-error" class="error-msg"></div>
+        </div>
+    </div>
+
+    <!-- Main Application UI (Hidden until login) -->
+    <div id="app-screen" class="screen">
+
+        <!-- Traditional Top Navigation Bar -->
+        <nav id="top-nav">
+            <div class="nav-left">
+                <span class="logo">🎲 Casino Royale</span>
+                <span id="player-name">Player</span>
+            </div>
+            <div class="nav-right">
+                <div class="balance-display">
+                    🪙 <span id="balance">0</span>
+                </div>
+                <button id="claim-daily-btn" class="btn secondary-btn">Daily Bonus</button>
+                <button id="claim-broke-btn" class="btn warning-btn" style="display:none;">Broke Bonus</button>
+                <button id="withdraw-btn" class="btn btc-btn">Withdraw BTC</button>
+                <button id="logout-btn" class="btn text-btn">Logout</button>
+            </div>
+        </nav>
+
+        <!-- Lobby Area -->
+        <div id="lobby-area" class="main-content active">
+            <h2>Select a Game</h2>
+            <div class="game-grid">
+                <div class="game-card" data-game="slots">
+                    <div class="game-banner slots-banner">🎰</div>
+                    <h3>Slot Machines</h3>
+                    <p>Multiple Themes & Free Spins</p>
+                </div>
+                <div class="game-card" data-game="blackjack">
+                    <div class="game-banner blackjack-banner">🃏</div>
+                    <h3>Blackjack</h3>
+                    <p>Beat the Dealer</p>
+                </div>
+                <div class="game-card" data-game="baccarat">
+                    <div class="game-banner baccarat-banner">🎲</div>
+                    <h3>Baccarat</h3>
+                    <p>Player vs Banker</p>
+                </div>
+                <div class="game-card" data-game="poker">
+                    <div class="game-banner poker-banner">♠️</div>
+                    <h3>Texas Hold'em</h3>
+                    <p>vs 5 AI Opponents</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Immersive Game Area (Takes over screen, hides nav) -->
+        <div id="game-area" class="main-content">
+            <button id="back-to-lobby-btn" class="btn primary-btn">⬅ Back to Lobby</button>
+            <div id="game-container">
+                <!-- Game specific UI will be injected here in later phases -->
+                <h2 id="current-game-title">Game Loading...</h2>
+                <p>Game mechanics will be implemented in the next phases.</p>
+            </div>
+        </div>
+
+        <!-- Withdrawal Modal -->
+        <div id="withdraw-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Withdraw to BTC</h2>
+                <p>Convert your in-game coins to real Bitcoin. (Mock rate: 10,000 coins = $1)</p>
+                <div class="form-group">
+                    <label>Amount (Coins):</label>
+                    <input type="number" id="withdraw-amount" min="1000" placeholder="1000">
+                </div>
+                <div class="form-group">
+                    <label>BTC Address (No KYC needed):</label>
+                    <input type="text" id="withdraw-address" placeholder="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh">
+                </div>
+                <button id="submit-withdraw-btn" class="btn btc-btn">Submit Request</button>
+                <div id="withdraw-msg"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

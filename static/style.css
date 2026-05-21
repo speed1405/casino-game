@@ -1,0 +1,243 @@
+:root {
+    --bg-dark: #121212;
+    --bg-card: #1e1e1e;
+    --text-main: #ffffff;
+    --text-muted: #aaaaaa;
+    --primary: #bb86fc;
+    --primary-hover: #9965f4;
+    --secondary: #03dac6;
+    --secondary-hover: #00b3a6;
+    --warning: #cf6679;
+    --warning-hover: #b35565;
+    --btc: #f7931a;
+    --btc-hover: #d17a15;
+    --nav-bg: #1f1b24;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+}
+
+.screen {
+    display: none;
+    min-height: 100vh;
+}
+
+.screen.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    display: none;
+    flex: 1;
+    padding: 2rem;
+}
+
+.main-content.active {
+    display: block;
+}
+
+/* Typography & Buttons */
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.primary-btn { background-color: var(--primary); color: #000; }
+.primary-btn:hover { background-color: var(--primary-hover); }
+
+.secondary-btn { background-color: var(--secondary); color: #000; }
+.secondary-btn:hover { background-color: var(--secondary-hover); }
+
+.warning-btn { background-color: var(--warning); color: #fff; }
+.warning-btn:hover { background-color: var(--warning-hover); }
+
+.btc-btn { background-color: var(--btc); color: #fff; }
+.btc-btn:hover { background-color: var(--btc-hover); }
+
+.text-btn { background-color: transparent; color: var(--text-muted); }
+.text-btn:hover { color: var(--text-main); }
+
+input[type="text"], input[type="number"] {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background-color: #2c2c2c;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+.error-msg { color: var(--warning); margin-top: 0.5rem; }
+
+/* Login Box */
+#login-screen {
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* Top Navigation */
+#top-nav {
+    background-color: var(--nav-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.balance-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #000;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    border: 1px solid #333;
+}
+
+/* Lobby Grid */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.game-card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(187, 134, 252, 0.2);
+}
+
+.game-banner {
+    height: 150px;
+    background-color: #333; /* Placeholder for future open-source images */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.game-card h3 { margin: 0; }
+.game-card p { color: var(--text-muted); font-size: 0.9rem; }
+
+/* Immersive Game Area */
+#game-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000; /* Dark immersive background */
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+}
+
+#game-area.active {
+    display: flex;
+}
+
+#back-to-lobby-btn {
+    align-self: flex-start;
+    margin: 1rem;
+}
+
+#game-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: var(--bg-card);
+    margin: 10% auto;
+    padding: 2rem;
+    border: 1px solid #888;
+    width: 400px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+}
