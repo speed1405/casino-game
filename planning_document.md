@@ -16,7 +16,7 @@ The Casino Web Application is a full-stack project featuring a web-based user in
     *   **Broke Bonus:** A fallback button to claim a small amount of coins if the player goes bankrupt, ensuring they can keep playing.
     *   **Real BTC Withdrawals:** Users can convert their earned in-game currency into real Bitcoin (BTC) and request a withdrawal to a standard on-chain Bitcoin address.
         *   **Live Exchange Rate:** The application will fetch real-time BTC market prices via an external API to calculate the conversion rate dynamically at the time of the request.
-        *   **Security & Approval:** To maintain security and manage the platform's funds, all withdrawal requests will be queued in a "Pending" state and require manual review and approval by an administrator before the actual blockchain transaction is initiated.
+        *   **Security & Approval:** To maintain security and manage the platform's funds, all withdrawal requests will be queued in a "Pending" state and require manual review and approval by an administrator before the actual blockchain transaction is initiated. Stringent security measures will be employed for wallet management, but **KYC (Know Your Customer) will explicitly not be required** for users to withdraw.
 *   **Lobby/Dashboard:** The main landing page post-login. Displays the player's current balance, provides buttons to claim daily/free coins, and features navigation links to the four games.
 
 ## 4. Games Specification
